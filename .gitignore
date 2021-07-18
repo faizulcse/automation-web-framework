@@ -1,0 +1,7 @@
+.idea/
+.DS_Store
+target/
+automation-web-framework.iml
+.idea/vcs.xml
+screenshots/
+out/
