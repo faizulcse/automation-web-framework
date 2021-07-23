@@ -1,0 +1,12 @@
+{
+  "name": "Audience created by API",
+  "permission_reminder": "You care about testing",
+  "contact": {
+    "company": "Mailchimp",
+    "address1": "675 Ponce De Leon Ave NE",
+    "city": "Atlanta",
+    "state": "GA",
+    "zip": "30308",
+    "country": "US"
+  }
+}

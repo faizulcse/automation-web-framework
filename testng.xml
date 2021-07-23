@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="automation-web-framework">
+        <classes>
+            <class name="testng.hover.HoverTests">
+                <methods>
+                    <include name="testHoverUser1"/>
+                </methods>
+            </class>
+            <class name="testng.alerts.AlertsTests">
+                <methods>
+                    <include name="testAcceptAlert"/>
+                    <include name="testTextFromAlert"/>
+                    <include name="testSetInputInAlert"/>
+                </methods>
+            </class>
+            <class name="testng.alerts.FileUploadTests">
+                <methods>
+                    <include name="testFileUpload"/>
+                </methods>
+            </class>
+            <class name="testng.dropdown.DropdownTests">
+                <methods>
+                    <include name="testSelectOption"/>
+                </methods>
+            </class>
+            <class name="testng.forgotpassword.ForgotPasswordTests">
+                <methods>
+                    <include name="testForgotPassword"/>
+                </methods>
+            </class>
+            <class name="testng.frames.FrameTests">
+                <methods>
+                    <include name="testWysiwyg"/>
+                </methods>
+            </class>
+            <class name="testng.javascript.JavaScriptTests">
+                <methods>
+                    <include name="testScrollToFifthParagraph"/>
+                </methods>
+            </class>
+            <class name="testng.keys.KeysTests">
+                <methods>
+                    <include name="testBackSpace"/>
+                    <include name="testPi"/>
+                </methods>
+            </class>
+            <class name="testng.login.LoginTests">
+                <methods>
+                    <include name="testSuccessfulLogin"/>
+                </methods>
+            </class>
+            <class name="testng.wait.WaitTests">
+                <methods>
+                    <include name="testWaitUntilHidden"/>
+                    <include name="testWaitUntilRendered"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
