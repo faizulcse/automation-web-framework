@@ -14,6 +14,7 @@ public class HomePage extends BasePage {
     private By javascriptAlertLink = By.linkText("JavaScript Alerts");
     private By hoversLink = By.linkText("Hovers");
     private By wysiwygEditorLink = By.linkText("WYSIWYG Editor");
+    private By multipleWindowsLink = By.linkText("Multiple Windows");
     private By checkboxLink = By.xpath("//a[@href='/checkboxes']");
 
     public HomePage(WebDriver driver) {
@@ -60,14 +61,19 @@ public class HomePage extends BasePage {
         return new AlertsPage(driver);
     }
 
-    public HoversPage clickHovers(){
+    public HoversPage clickHovers() {
         driver.findElement(hoversLink).click();
         return new HoversPage(driver);
     }
 
-    public WysiwygEditorPage clickWysiwygEditor(){
+    public WysiwygEditorPage clickWysiwygEditor() {
         driver.findElement(wysiwygEditorLink).click();
         return new WysiwygEditorPage(driver);
+    }
+
+    public MultipleWindowsPage clickMultipleWindows() {
+        driver.findElement(multipleWindowsLink).click();
+        return new MultipleWindowsPage(driver);
     }
 
     public void clickCheckBoxes() {

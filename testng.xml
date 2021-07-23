@@ -3,11 +3,6 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="automation-web-framework">
         <classes>
-            <class name="testng.hover.HoverTests">
-                <methods>
-                    <include name="testHoverUser1"/>
-                </methods>
-            </class>
             <class name="testng.alerts.AlertsTests">
                 <methods>
                     <include name="testAcceptAlert"/>
@@ -35,6 +30,11 @@
                     <include name="testWysiwyg"/>
                 </methods>
             </class>
+            <class name="testng.hover.HoverTests">
+                <methods>
+                    <include name="testHoverUser1"/>
+                </methods>
+            </class>
             <class name="testng.javascript.JavaScriptTests">
                 <methods>
                     <include name="testScrollToFifthParagraph"/>
@@ -49,6 +49,12 @@
             <class name="testng.login.LoginTests">
                 <methods>
                     <include name="testSuccessfulLogin"/>
+                </methods>
+            </class>
+            <class name="testng.navigation.NavigationTests">
+                <methods>
+                    <include name="testNavigator"/>
+                    <include name="testSwitchTab"/>
                 </methods>
             </class>
             <class name="testng.wait.WaitTests">
