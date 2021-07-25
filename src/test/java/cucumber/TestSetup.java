@@ -1,5 +1,8 @@
 package cucumber;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
@@ -11,6 +14,8 @@ import utils.Links;
 import utils.User;
 import utils.WindowManager;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
@@ -76,5 +81,15 @@ public class TestSetup {
         options.addArguments("--ignore-certificate-errors");
         options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
         return options;
+    }
+
+    protected static void takeScreenshot(String name) {
+        TakesScreenshot camera = driver;
+        File screenshot = camera.getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(screenshot, new File(User.SCREENSHOT_FOLDER + name + ".png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

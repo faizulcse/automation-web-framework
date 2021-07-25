@@ -14,12 +14,16 @@ public class InfiniteScrollPage extends BasePage {
     public void scrollToParagraph(int index) {
         String script = "window.scrollTo(0, document.body.scrollHeight)";
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        while (getNumberOfParagrapsPresent() < index) {
+        while (getNumberOfParagraphsPresent() < index) {
             js.executeScript(script);
         }
     }
 
-    private int getNumberOfParagrapsPresent() {
+    private int getNumberOfParagraphsPresent() {
         return driver.findElements(textBlocks).size();
+    }
+
+    public boolean isParagraphDislplayed(int index) {
+        return driver.findElements(textBlocks).get(index - 1).isDisplayed();
     }
 }

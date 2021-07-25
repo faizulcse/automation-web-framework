@@ -21,6 +21,5 @@ public class WaitTests extends BaseTests {
         DLExampleTwoPage loadingPage = homePage.clickDynamicLoading().clickExample2();
         loadingPage.clickStartButton();
         assertEquals(loadingPage.getLoadedText(), "Hello World!", "Loaded text incorrect");
-
     }
 }

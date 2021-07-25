@@ -23,6 +23,8 @@ public class Hooks extends TestSetup {
      */
     @After
     public static void tearDown(Scenario scenario) {
+        if (scenario.isFailed())
+            takeScreenshot(scenario.getName());
         TestSetup.closeBrowser();
     }
 }
