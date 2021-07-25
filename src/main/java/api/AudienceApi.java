@@ -1,6 +1,7 @@
 package api;
 
 import io.restassured.response.Response;
+import utils.RestApiHelper;
 
 public class AudienceApi extends ApiFactory {
     public AudienceApi() {

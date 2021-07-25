@@ -1,4 +1,4 @@
-package api;
+package utils;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -10,15 +10,15 @@ public class RestApiHelper {
     private static String authKey;
     private static RequestSpecification request;
 
-    static void setAuthKey(String authKey) {
+    public static void setAuthKey(String authKey) {
         RestApiHelper.authKey = authKey;
     }
 
-    static void setBaseURI(String baseURI) {
+    public static void setBaseURI(String baseURI) {
         RestApiHelper.baseURI = baseURI;
     }
 
-    static void setBasePath(String basePath) {
+    public static void setBasePath(String basePath) {
         RestApiHelper.basePath = basePath;
     }
 
@@ -30,7 +30,7 @@ public class RestApiHelper {
         request.header("Content-Type", "application/json");
     }
 
-    static Response getRequest() {
+    public static Response getRequest() {
         try {
             basicAuth();
             return request.get();
@@ -39,7 +39,7 @@ public class RestApiHelper {
         return null;
     }
 
-    static Response getRequest(String id) {
+    public static Response getRequest(String id) {
         try {
             basicAuth();
             return request.get(id);
@@ -48,7 +48,7 @@ public class RestApiHelper {
         return null;
     }
 
-    static Response postRequest(String data) {
+    public static Response postRequest(String data) {
         try {
             basicAuth();
             return request.body(data).post();
@@ -57,7 +57,7 @@ public class RestApiHelper {
         return null;
     }
 
-    static Response postRequest(String data, String endpoint) {
+    public static Response postRequest(String data, String endpoint) {
         try {
             basicAuth();
             return request.body(data).post(endpoint);
@@ -66,7 +66,7 @@ public class RestApiHelper {
         return null;
     }
 
-    static Response putRequest(String data, String endpoint) {
+    public static Response putRequest(String data, String endpoint) {
         try {
             basicAuth();
             return request.body(data).put(endpoint);
@@ -75,7 +75,7 @@ public class RestApiHelper {
         return null;
     }
 
-    static Response patchRequest(String data, String endpoint) {
+    public static Response patchRequest(String data, String endpoint) {
         try {
             basicAuth();
             return request.body(data).put(endpoint);
@@ -84,7 +84,7 @@ public class RestApiHelper {
         return null;
     }
 
-    static Response deleteRequest(String id) {
+    public static Response deleteRequest(String id) {
         try {
             basicAuth();
             return request.delete(id);
