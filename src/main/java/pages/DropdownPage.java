@@ -21,7 +21,7 @@ public class DropdownPage extends BasePage {
 
     public List<String> getSelectedOptions() {
         List<WebElement> selectedElements = findDropDownElement().getAllSelectedOptions();
-        return selectedElements.stream().map(e -> e.getText()).collect(Collectors.toList());
+        return selectedElements.stream().map(WebElement::getText).collect(Collectors.toList());
     }
 
     public Select findDropDownElement() {
